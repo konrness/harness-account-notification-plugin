@@ -1,0 +1,24 @@
+{
+  "name": "harness-account-notification-plugin",
+  "description": "A Slack app to send Harness Account updates",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.4.0",
+    "node-fetch": "^3.3.0"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "repository": {
+    "url": "https://github.com/konrness/harness-account-notification-plugin"
+  },
+  "keywords": [
+    "harness",
+    "slack",
+    "bolt"
+  ]
+}

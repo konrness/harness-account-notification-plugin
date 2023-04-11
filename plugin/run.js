@@ -35,7 +35,7 @@ const resp = await fetch(
   }
 );
 if (!resp.ok) {
-  console.log(response)
+  console.log(resp)
   process.exit(-1)
 }
 /**
@@ -116,37 +116,6 @@ let resourceAuditNotifications = [];
 
 resourceAuditEvents.content.forEach(async resourceEvent => {
 
-  /**
-   * FORMAT:
-   * {
-  auditId: '63e5815e0f842e39a47c71be',
-  resourceScope: {
-    accountIdentifier: '6C9qo5gJSdK7gb-ngOtpCw',
-    orgIdentifier: 'default',
-    projectIdentifier: 'Account_Notification_Plugin'
-  },
-  httpRequestInfo: { requestMethod: 'POST' },
-  requestMetadata: { clientIP: '98.59.36.166' },
-  timestamp: 1675985245280,
-  authenticationInfo: {
-    principal: { type: 'USER', identifier: 'konr.ness@harness.io' },
-    labels: {
-      userId: 'FA2HiMNoTCengvhsFUBFzQ',
-      username: 'konr.ness@harness.io'
-    }
-  },
-  module: 'CORE',
-  resource: {
-    type: 'VARIABLE',
-    identifier: 'Test_1',
-    labels: { resourceName: 'Test 1' }
-  },
-  action: 'CREATE'
-}
-
-   * 
-   */
-
   resourceAuditNotifications.push({
     "user": resourceEvent.authenticationInfo.principal.identifier,
     "action": resourceEvent.action,
@@ -157,11 +126,6 @@ resourceAuditEvents.content.forEach(async resourceEvent => {
 });
 
 console.log(resourceAuditNotifications);
-
-
-
-// USER AUDIT
-
 
 async function fetchRecentPipelineExecutions(orgIdentifier, projectIdentifier) {
 
@@ -228,3 +192,6 @@ async function fetchRecentAuditHistory() {
   return data.data;
 }
 
+function sendSlackNotification(slackWebhookUrl, pipelineNotifications, resourceAuditNotifications) {
+
+}

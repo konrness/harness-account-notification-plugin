@@ -21,10 +21,10 @@ set +e
 
 if [ "$PLUGIN_DEBUG" = "true" ]; then
     echo "-- DEBUG: running following command..."
-    echo "-- DEBUG: node /home/run.js $PLUGIN_ACCOUNT_ID $PLUGIN_ACCESS_KEY"
+    echo "-- DEBUG: node /app/run.js $PLUGIN_ACCOUNT_ID $PLUGIN_ACCESS_KEY"
 fi
 
-exitcode=`node /home/run.js $PLUGIN_ACCOUNT_ID $PLUGIN_ACCESS_KEY &> output.log; echo $?`
+exitcode=`node /app/run.js $PLUGIN_ACCOUNT_ID $PLUGIN_ACCESS_KEY &> output.log; echo $?`
 
 if [ "$PLUGIN_DEBUG" = "true" ]; then
     cat output.log
