@@ -3,11 +3,13 @@
   "description": "A Slack app to send Harness Account updates",
   "private": true,
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "@slack/bolt": "^3.4.0",
+    "@slack/web-api": "~6.8.1",
     "node-fetch": "^3.3.0"
   },
   "engines": {

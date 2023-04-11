@@ -1,4 +1,3 @@
-// Require the Node Slack SDK package (github.com/slackapi/node-slack-sdk)
 import { WebClient, LogLevel } from "@slack/web-api";
 
 
